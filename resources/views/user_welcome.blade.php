@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CharApp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+     
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    footer {
+      
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; 
+      margin: auto;
+      min-height:200px;
+  }
+
+  
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  .dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.image-desc{
+
+font-weight: bolder;
+background-color: white;
+font-family: sans-serif;
+font-size:1.4vw; 
+  }
+  </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default" style="background-color: rgb(35,162,218);">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/user_welcome" style="color: white">Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="{{ url('/user_new_applicant') }}" target="iframe" style="color: white">New Applicant</a></li>
+       
+       
+         
+          
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url('/home') }}" style="color: white"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="carousal.png" alt="Image" style="max-width:27%; height: auto;">
+        <div class="carousel-caption">
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="carousal1.png" alt="Image" style="max-width: 58%; height: auto;">
+        <div class="carousel-caption">
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+  
+<div class="container text-center">    
+  <h3>What We Do</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <center>
+      <img src="medical_aid.png" class="img-responsive"  style="max-width:35%; height:9.9vw;"  alt="Image">
+      <p class="image-desc"> MEDICAL AID</p>
+      </center>
+    </div>
+    <div class="col-sm-4"> 
+      <center>
+      <img src="edu.png" class="img-responsive"  style="max-width:35%; height:9.9vw;"  alt="Image">
+      <p class="image-desc">SUPPORT EDUCATION</p>    
+      </center>
+    </div>
+    <div class="col-sm-4">
+
+      <center>
+        
+      <img src="rupeetrans.png" class="img-responsive"  style="max-width:35%; height:9.9vw;"  alt="Image">
+
+      <p class="image-desc">FINANCIAL AID</p>    
+      </center>
+    </div>
+  </div>
+</div><br>
+
+<footer class="container-fluid text-center" style="background-color:rgb(35,162,218);">
+ <marquee> <div style="font-weight: bold; font-size: 20px">
+ BAI MOTIBAI KASARA BAUG BORIVALI CHARITABLE TRUST
+</div>
+</marquee>
+</footer>
+
+</body>
+</html>
