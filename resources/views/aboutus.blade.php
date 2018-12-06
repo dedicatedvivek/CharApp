@@ -7,6 +7,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
+.active {
+    background-color: red;
+    color: white;
+}
 	body{
 	background-color:#f4f2ef;
 	background-size: cover;
@@ -62,7 +66,8 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: red;
+    color: white;
 }
 
 .dropdown:hover .dropdown-content {
@@ -192,7 +197,72 @@
 </style>
 	<title>ABOUT US</title>
 </head>
-@include('mynav')
+
+
+<nav class="navbar navbar-default" style="background-color: rgb(35,162,218);">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/" style="color: white">Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="{{ url('/newapplicant') }}"  target="iframe" style="color: white">New Applicant</a></li>
+        <li><a href="{{ url('/listapplicant') }}" target="iframe" style="color: white">Applicants List</a></li>
+        <li>
+           <div class="dropdown">
+             <button class="dropbtn tag">Banks
+               <i class="fa fa-caret-down"></i>
+             </button>
+              <div class="dropdown-content">
+                 <a  href="{{ url('/new_bank') }}">New Bank</a>
+                 <a  href="{{ url('/list_bank') }}">Bank Detail</a>
+                 
+              </div>
+          </div> 
+        </li>
+        <li>
+          <div class="dropdown">
+             <button class="dropbtn ">Savings
+               <i class="fa fa-caret-down"></i>
+             </button>
+              <div class="dropdown-content">
+                 <a href="{{ url('/new_saving') }}" >ADD A SAVINGS ACCOUNT</a>
+                 <a href="{{ url('/list_savings') }}">ACCOUNTS' DETAILS</a>
+                 
+              </div>
+        </li>
+        <li><div class="dropdown">
+             <button class="dropbtn">Transactions
+               <i class="fa fa-caret-down"></i>
+             </button>
+              <div class="dropdown-content">
+                 <a  href="{{ url('/new_fd') }}">ADD FD ACCOUNT</a>
+                 <a  href="{{ url('/new_expense') }}">LOCAL EXPENSE</a>
+                 <a  href="{{ url('/list_disbursements') }}">SANCTION DETAILS</a>
+                 <a  href="{{ url('/fd_list') }}">FD LIST</a>
+                 
+              </div></li>
+        <li><a class="active" href="{{ url('/aboutus') }}" target="iframe" style="color: white">About Us</a></li>
+        <li><a  href="{{ url('/index') }}" target="iframe" style="color: white">View Status</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url('/home') }}" style="color: white"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
 <body>
 <center>
 	<div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=borivali&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.crocothemes.net"></a></div><style>.mapouter{text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>

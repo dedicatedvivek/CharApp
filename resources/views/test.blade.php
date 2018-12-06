@@ -79,6 +79,12 @@ background-color: white;
 font-family: sans-serif;
 font-size:1.4vw; 
   }
+
+.navbar-brand,.active-page {
+    background-color: red;
+    color: white;
+}
+
   </style>
 
 </head>
@@ -92,12 +98,12 @@ font-size:1.4vw;
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="/" style="color: white">Home</a>
+      <a class="navbar-brand active-page" href="/" style="color: white">Home</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="{{ url('/newapplicant') }}" target="iframe" style="color: white">New Applicant</a></li>
-        <li><a href="{{ url('/listapplicant') }}" target="iframe" style="color: white">Applicants List</a></li>
+        <li><a  href="{{ url('/newapplicant') }}" target="iframe" style="color: white">New Applicant</a></li>
+        <li><a  href="{{ url('/listapplicant') }}" target="iframe" style="color: white">Applicants List</a></li>
         <li>
            <div class="dropdown">
              <button class="dropbtn">Banks
@@ -115,24 +121,24 @@ font-size:1.4vw;
                <i class="fa fa-caret-down"></i>
              </button>
               <div class="dropdown-content">
-                 <a href="{{ url('/new_saving') }}">ADD A SAVINGS ACCOUNT</a>
-                 <a href="{{ url('/list_savings') }}">ACCOUNTS' DETAILS</a>
+                 <a  href="{{ url('/new_saving') }}">ADD A SAVINGS ACCOUNT</a>
+                 <a  href="{{ url('/list_savings') }}">ACCOUNTS' DETAILS</a>
                  
               </div></li>
         <li><div class="dropdown">
-             <button class="dropbtn">Transactions
+             <button class="dropbtn tag">Transactions
                <i class="fa fa-caret-down"></i>
              </button>
               <div class="dropdown-content">
-                 <a href="{{ url('/new_fd') }}">ADD FD ACCOUNT</a>
-                 <a href="{{ url('/new_expense') }}">LOCAL EXPENSE</a>
-                 <a href="{{ url('/list_disbursements') }}">SANCTION DETAILS</a>
-                 <a href="{{ url('/fd_list') }}">FD LIST</a>
+                 <a  href="{{ url('/new_fd') }}">ADD FD ACCOUNT</a>
+                 <a  href="{{ url('/new_expense') }}">LOCAL EXPENSE</a>
+                 <a  href="{{ url('/list_disbursements') }}">SANCTION DETAILS</a>
+                 <a  href="{{ url('/fd_list') }}">FD LIST</a>
                  
               </div></li>
         
-         <li><a href="{{ url('/aboutus') }}" target="iframe" style="color: white">About Us</a></li>
-           <li><a href="{{ url('/index') }}" target="iframe" style="color: white">View Status</a></li>
+         <li><a href="{{ url('/aboutus') }}"  target="iframe" style="color: white">About Us</a></li>
+           <li><a href="{{ url('/index') }}"  target="iframe" style="color: white">View Status</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ url('/home') }}" style="color: white"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -140,8 +146,6 @@ font-size:1.4vw;
     </div>
   </div>
 </nav>
-
-
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     
@@ -181,22 +185,26 @@ font-size:1.4vw;
   <div class="row">
     <div class="col-sm-4">
       <center>
+        <a href="{{ url ('/medical') }}">
       <img src="medical_aid.png" class="img-responsive"  style="max-width:35%; height:9.9vw;"  alt="Image">
+        </a>
       <p class="image-desc"> MEDICAL AID</p>
       </center>
     </div>
     <div class="col-sm-4"> 
       <center>
+        <a href="{{ url ('/education') }}">
       <img src="edu.png" class="img-responsive"  style="max-width:35%; height:9.9vw;"  alt="Image">
+        </a>
       <p class="image-desc">SUPPORT EDUCATION</p>    
       </center>
     </div>
     <div class="col-sm-4">
 
       <center>
-        
+        <a href="{{ url ('/finance') }}">
       <img src="rupeetrans.png" class="img-responsive"  style="max-width:35%; height:9.9vw;"  alt="Image">
-
+         </a>
       <p class="image-desc">FINANCIAL AID</p>    
       </center>
     </div>

@@ -22,12 +22,12 @@ class SavingsController extends Controller
     	$acc_holder= $req->input('acc_holder');
     	$acc_number= $req->input('acc_number');
     	$acc_balance= $req->input('acc_balance');
-    	
+    	$th_amt = $req->input('th_amt');
     	
     	
     	
 
-        $data=$arrayName = array('fo_b_code' =>$fo_b_code ,'acc_holder' =>$acc_holder ,'acc_number' =>$acc_number ,'acc_balance' =>$acc_balance);
+        $data=$arrayName = array('fo_b_code' =>$fo_b_code ,'acc_holder' =>$acc_holder ,'acc_number' =>$acc_number ,'acc_balance' =>$acc_balance, 'th_amt' =>$th_amt);
 
         DB::table('savings_master')->insert($data);
 

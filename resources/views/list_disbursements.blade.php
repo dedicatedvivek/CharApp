@@ -7,6 +7,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
+
+   .active {
+    background-color: red;
+    color: white;
+   } 
 		#table1{
 	 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -54,7 +59,7 @@
     outline: none;
     color: white;
     padding: 14px 16px;
-    background-color: inherit;
+    
     font-family: inherit;
     margin: 0;
 }
@@ -78,17 +83,88 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: red;
+    color: white;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
+.dropbtn {
+    background-color: rgb(35,162,218);
+}
+
+
 	</style>
 
 </head>
-@include('mynav')
+
+
+<nav class="navbar navbar-default" style="background-color: rgb(35,162,218);">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/" style="color: white">Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="{{ url('/newapplicant') }}"  target="iframe" style="color: white">New Applicant</a></li>
+        <li><a href="{{ url('/listapplicant') }}" target="iframe" style="color: white">Applicants List</a></li>
+        <li>
+           <div class="dropdown">
+             <button class="dropbtn tag">Banks
+               <i class="fa fa-caret-down"></i>
+             </button>
+              <div class="dropdown-content">
+                 <a  href="{{ url('/new_bank') }}">New Bank</a>
+                 <a  href="{{ url('/list_bank') }}">Bank Detail</a>
+                 
+              </div>
+          </div> 
+        </li>
+        <li>
+          <div class="dropdown">
+             <button class="dropbtn ">Savings
+               <i class="fa fa-caret-down"></i>
+             </button>
+              <div class="dropdown-content">
+                 <a href="{{ url('/new_saving') }}" >ADD A SAVINGS ACCOUNT</a>
+                 <a href="{{ url('/list_savings') }}">ACCOUNTS' DETAILS</a>
+                 
+              </div>
+        </li>
+        <li><div class="dropdown">
+             <button class="dropbtn active">Transactions
+               <i class="fa fa-caret-down"></i>
+             </button>
+              <div class="dropdown-content">
+                 <a  href="{{ url('/new_fd') }}">ADD FD ACCOUNT</a>
+                 <a  href="{{ url('/new_expense') }}">LOCAL EXPENSE</a>
+                 <a class="active" href="{{ url('/list_disbursements') }}">SANCTION DETAILS</a>
+                 <a  href="{{ url('/fd_list') }}">FD LIST</a>
+                 
+              </div></li>
+        <li><a  href="{{ url('/aboutus') }}" target="iframe" style="color: white">About Us</a></li>
+        <li><a  href="{{ url('/index') }}" target="iframe" style="color: white">View Status</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url('/home') }}" style="color: white"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
 <h2 style="color: #19303A" align="center">DISBURSEMENT LIST</h2>
 <body>
 

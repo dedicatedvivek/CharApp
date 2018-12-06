@@ -68,7 +68,21 @@ Route::get("new_expense",function(){
 	return view ('new_expense');
 });
 
+});
 
+Route::get("finance",function(){
+
+	return view ('finance');
+});
+
+Route::get("education",function(){
+
+	return view ('education');
+});
+
+Route::get("medical",function(){
+
+	return view ('medical');
 });
 
 

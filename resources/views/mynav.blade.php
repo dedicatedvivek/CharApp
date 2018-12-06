@@ -2,11 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style type="text/css">
-    a:active {
-      background-color: red;
-    }
-  </style>
+  
   <title></title>
 </head>
 <body>
@@ -23,27 +19,27 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="{{ url('/newapplicant') }}" target="iframe" style="color: white">New Applicant</a></li>
+        <li><a href="{{ url('/newapplicant') }}"  target="iframe" style="color: white">New Applicant</a></li>
         <li><a href="{{ url('/listapplicant') }}" target="iframe" style="color: white">Applicants List</a></li>
         <li>
            <div class="dropdown">
-             <button class="dropbtn">Banks
+             <button class="dropbtn tag">Banks
                <i class="fa fa-caret-down"></i>
              </button>
               <div class="dropdown-content">
-                 <a href="{{ url('/new_bank') }}">New Bank</a>
-                 <a href="{{ url('/list_bank') }}">Bank Detail</a>
+                 <a  href="{{ url('/new_bank') }}">New Bank</a>
+                 <a  href="{{ url('/list_bank') }}">Bank Detail</a>
                  
               </div>
           </div> 
         </li>
         <li>
           <div class="dropdown">
-             <button class="dropbtn">Savings
+             <button class="dropbtn ">Savings
                <i class="fa fa-caret-down"></i>
              </button>
               <div class="dropdown-content">
-                 <a href="{{ url('/new_saving') }}">ADD A SAVINGS ACCOUNT</a>
+                 <a href="{{ url('/new_saving') }}" >ADD A SAVINGS ACCOUNT</a>
                  <a href="{{ url('/list_savings') }}">ACCOUNTS' DETAILS</a>
                  
               </div>
@@ -53,14 +49,14 @@
                <i class="fa fa-caret-down"></i>
              </button>
               <div class="dropdown-content">
-                 <a href="{{ url('/new_fd') }}">ADD FD ACCOUNT</a>
-                 <a href="{{ url('/new_expense') }}">LOCAL EXPENSE</a>
-                 <a href="{{ url('/list_disbursements') }}">SANCTION DETAILS</a>
-                 <a href="{{ url('/fd_list') }}">FD LIST</a>
+                 <a  href="{{ url('/new_fd') }}">ADD FD ACCOUNT</a>
+                 <a  href="{{ url('/new_expense') }}">LOCAL EXPENSE</a>
+                 <a  href="{{ url('/list_disbursements') }}">SANCTION DETAILS</a>
+                 <a  href="{{ url('/fd_list') }}">FD LIST</a>
                  
               </div></li>
-        <li><a href="{{ url('/aboutus') }}" target="iframe" style="color: white">About Us</a></li>
-        <li><a href="{{ url('/index') }}" target="iframe" style="color: white">View Status</a></li>
+        <li><a  href="{{ url('/aboutus') }}" target="iframe" style="color: white">About Us</a></li>
+        <li><a  href="{{ url('/index') }}" target="iframe" style="color: white">View Status</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ url('/home') }}" style="color: white"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
