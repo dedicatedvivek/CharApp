@@ -102,8 +102,8 @@ font-size:1.4vw;
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a  href="{{ url('/newapplicant') }}" target="iframe" style="color: white">New Applicant</a></li>
-        <li><a  href="{{ url('/listapplicant') }}" target="iframe" style="color: white">Applicants List</a></li>
+        <li><a  href="{{ url('/newapplicant') }}"  style="color: white">New Applicant</a></li>
+        <li><a  href="{{ url('/listapplicant') }}"  style="color: white">Applicants List</a></li>
         <li>
            <div class="dropdown">
              <button class="dropbtn">Banks
@@ -137,8 +137,8 @@ font-size:1.4vw;
                  
               </div></li>
         
-         <li><a href="{{ url('/aboutus') }}"  target="iframe" style="color: white">About Us</a></li>
-           <li><a href="{{ url('/index') }}"  target="iframe" style="color: white">View Status</a></li>
+         <li><a href="{{ url('/aboutus') }}"   style="color: white">About Us</a></li>
+           <li><a href="{{ url('/index') }}"   style="color: white">View Status</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ url('/home') }}" style="color: white"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
