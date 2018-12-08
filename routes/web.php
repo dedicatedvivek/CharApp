@@ -29,6 +29,10 @@ Route::get("index",function(){
 
 	return view ('laraconfig');
 });
+Route::get("overview",function(){
+
+	return view ('overview');
+});
 Route::get("user_index",function(){
 
 	return view ('user_laraconfig');
