@@ -14,10 +14,6 @@
 <title>BANK MASTER</title>
 
 <style>
-.active {
-  background-color: red;
-  color: white;
-}
 
 body{
 	background-color:#f4f2ef;
@@ -43,10 +39,6 @@ body{
 }
 
 #table1 tr:hover{background-color: #dde;}
-
-
-
-
 
 #table1 tr{
   cursor: default;
@@ -230,6 +222,14 @@ body{
     color: #4D4D4D;
     margin-top: 10px;
     text-align: right;
+ }
+
+ .active {
+  background-color: red;
+  color: white;
+}
+
+   
 
 </style>
 <script type="text/javascript">
@@ -276,8 +276,8 @@ $length= count($savings);
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="{{ url('/newapplicant') }}"  target="iframe" style="color: white">New Applicant</a></li>
-        <li><a href="{{ url('/listapplicant') }}" target="iframe" style="color: white">Applicants List</a></li>
+        <li><a href="{{ url('/newapplicant') }}"   style="color: white">New Applicant</a></li>
+        <li><a href="{{ url('/listapplicant') }}"  style="color: white">Applicants List</a></li>
         <li>
            <div class="dropdown">
              <button class="dropbtn tag">Banks
@@ -312,8 +312,8 @@ $length= count($savings);
                  <a  href="{{ url('/fd_list') }}">FD LIST</a>
                  
               </div></li>
-        <li><a  href="{{ url('/aboutus') }}" target="iframe" style="color: white">About Us</a></li>
-        <li><a  href="{{ url('/index') }}" target="iframe" style="color: white">View Status</a></li>
+        <li><a  href="{{ url('/aboutus') }}"  style="color: white">About Us</a></li>
+        <li><a  href="{{ url('/index') }}"  style="color: white">View Status</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ url('/home') }}" style="color: white"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
