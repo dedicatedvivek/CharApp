@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class applicant extends Model
+class Fd extends Model
 {
-    protected $table = 'applicants';
+    protected $table = 'fixed_deposits';
     public $timestamps = false;
 }
