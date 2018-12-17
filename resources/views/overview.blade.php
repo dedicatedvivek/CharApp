@@ -302,7 +302,7 @@ display: table-cell;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 100;
 }
 
 .dropdown-content a {
@@ -312,6 +312,7 @@ display: table-cell;
     text-decoration: none;
     display: block;
     text-align: left;
+    z-index: 100;
 }
 
 .dropdown-content a:hover {
@@ -347,7 +348,7 @@ display: table-cell;
   
   left:0px;
   top: 50px;
-  z-index: 100;
+  z-index: 50;
 }
 .formhead{
 	color: black;
@@ -366,14 +367,8 @@ display: table-cell;
   
   left:650px;
   top: 440px;
-  z-index: 100;
+  z-index: 50;
 }
-
-
-
-
-
-
 
 .form-style-10{
     width:80%;
