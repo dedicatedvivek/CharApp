@@ -140,6 +140,7 @@ font-size:1.4vw;
 
          <li><a href="{{ url('/aboutus') }}"  target="iframe" style="color: white">About Us</a></li>
            <li><a href="{{ url('/index') }}"  target="iframe" style="color: white">View Status</a></li>
+            <li><a href="{{ url('/overview') }}"  target="iframe" style="color: white">Overview</a></li>
         
 
       </ul>
