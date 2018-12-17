@@ -13,30 +13,27 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    function insert(Request $req)
+    function insert(Request $req1)
 
     {
-    	$formnum= $req->input('formnum');
-    	$firstname= $req->input('firstname');
-    	$lastname= $req->input('lastname');
-    	$age= $req->input('age');
-    	$gender= $req->input('gender');
-    	$nationality= $req->input('nationality');
-    	$address= $req->input('address');
-    	$city= $req->input('city');
-    	$pincode= $req->input('pincode');
-    	$category= $req->input('category');
-    	$email= $req->input('email');
-    	$phone=$req->input('phone');
-    	$image=$req->input('image');
-    	$doc1=$req->input('doc1');
-    	$doc2=$req->input('doc2');
-    	
-    	
+    	$id= $req1->input('id');
+        $fullname= $req1->input('fullname');
+        $aadharnumber= $req1->input('aadharnumber');
+        $address= $req1->input('address');
+        $city= $req1->input('city');
+        $category= $req1->input('category');
+        $phone1= $req1->input('phone1');
+        $phone2= $req1->input('phone2');
+        $visitmethod= $req1->input('visitmethod');
+        $appissue= $req1->input('appissue');
+        $appsubmit= $req1->input('appsubmit');
+        $doc1= $req1->input('doc1');
+        $doc2=$req1->input('doc2');
 
-        $data=$arrayName = array('formnum' =>$formnum ,'firstname' =>$firstname ,'lastname' =>$lastname , 'age' =>$age , 'gender' =>$gender , 'nationality' =>$nationality , 'address' =>$address , 'city' =>$city , 'pincode' =>$pincode ,'category' =>$category ,'email' =>$email,'phone' =>$phone,'image' =>$image,'doc1' =>$doc1,'doc2' =>$doc2);
 
-        DB::table('applicants')->insert($data);
+        $data1=$arrayName = array('name' =>$fullname ,'aadhar' =>$aadharnumber , 'address' =>$address , 'city' =>$city , 'category' =>$category , 'phone1' =>$phone1 , 'phone2' =>$phone2 , 'vist_method' =>$visitmethod ,'issue_date' =>$appissue ,'submission_date' =>$appsubmit,'doc1' =>$doc1,'doc2' =>$doc2);
+
+        DB::table('applicants')->insert($data1);
 
         echo "<script>
         window.alert('RECORD SUBMITTED SUCCESSFULLY');

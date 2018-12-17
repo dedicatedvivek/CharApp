@@ -1,4 +1,6 @@
-
+<?php
+use App\Update;
+?>
 <html>
 <head>
 
@@ -312,7 +314,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 } 
 
-$sql = "SELECT id,formnum,firstname, lastname,age,gender,nationality,address,city,pincode,category,email,phone,sanction_status FROM applicants";
+$sql = "SELECT id,aadhar, name,address,city,category,phone1,phone2,vist_method,issue_date,submission_date,sanction_status,cheque_issue_date,cheque_status FROM applicants";
 $result = $conn->query($sql);
 echo"<center>";
 
@@ -321,12 +323,12 @@ echo"<center>";
 
 
 
-    echo "<table class='appl-list-table' id='table1'><tr><th>id</th><th>Form Number</th><th>First Name</th><th>Last Name</th><th>Age</th><th>Gender</th><th>Nationality</th><th>Address</th><th>City</th><th>Pincode</th><th>Category</th><th>Email id</th><th>Phone Number</th><th>SANCTION STATUS</th><th>Sanction Amount</th><th>EDIT/DELETE</th></tr>";
+    echo "<table class='appl-list-table' id='table1'><tr><th>Applicant ID</th><th>Aadhar Number</th><th>Name</th><th>Address</th><th>City</th><th>Aid<th>Phone 1</th><th>Phone 2</th><th>Visit/Call</th><th>Form Issue Date</th><th>Form Submission Date</th><th>Sanction Status</th><th>Cheque Issue Date</th><th>Cheque Status</th><th>Sanction Amount</th><th>Edit</th><th>Delete</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
 
 
-        echo "<tr onclick='showappl()'><td>".$row["id"]."</td><td>".$row["formnum"]."</td><td>".$row["firstname"]."</td><td>".$row["lastname"]."</td><td>".$row["age"]."</td><td>".$row["gender"]."</td><td>".$row["nationality"]."</td><td>".$row["address"]."</td><td>".$row["city"]."</td><td>".$row["pincode"]."</td><td>".$row["category"]."</td><td>".$row["email"]."</td><td>".$row["phone"]."</td><td>".$row["sanction_status"]."</td><td><button class='click-btn' onclick='modalopen_delete()'>CLICK HERE</button></td><td><button class='click-btn' onclick='modalopen()'>EDIT</button>&nbsp;&nbsp;<button class='click-btn' type='submit' onclick='/delete_applicant(this)' >DELETE</button></td> </tr>";
+        echo "<tr onclick='showappl()'><td>".$row["id"]."</td><td>".$row["aadhar"]."</td><td>".$row["name"]."</td><td>".$row["address"]."</td><td>".$row["city"]."</td><td>".$row["category"]."</td><td>".$row["phone1"]."</td><td>".$row["phone2"]."</td><td>".$row["vist_method"]."</td><td>".$row["issue_date"]."</td><td>".$row["submission_date"]."</td><td>".$row["sanction_status"]."</td><td>".$row["cheque_issue_date"]."</td><td>".$row["cheque_status"]."</td><td><button class='click-btn' onclick='modalopen_delete()'>CLICK HERE</button></td><td><button class='click-btn' onclick='modalopen()'>EDIT</button></td><td><form method='POST' action='delete()'<button class='click-btn' type='submit' name='delbutton'>DELETE</button></form></td></tr>";
     }
 
         echo "</table>";
@@ -361,45 +363,49 @@ $length= count($savings);
 	{{ csrf_field() }}
 	<table id='table_form'>
 		<tr>
-			<td>id</td> <td><input type="number" id="id" name="id" readonly></td>
+			<td>id</td> <td><input type="number" id="idmod" name="id" readonly></td>
 		</tr>
 	
 		<tr>
-			<td>FormNumber</td> <td><input type="text" id="formnum" name="formnum"></td>
+			<td>Aadhar Number</td> <td><input type="text" id="aadharmod" name="aadharnumber"></td>
 		</tr>
 		<tr>
-			<td>FirstName</td> <td><input type="text" id="firstname" name="firstname"></td>
+			<td>Name</td> <td><input type="text" id="namemod" name="fullname"></td>
 		</tr>
 		<tr>
-			<td>LastName</td> <td><input type="text" id="lastname" name="lastname"></td>
+			<td>Address</td> <td><input type="text" id="addressmod" name="address"></td>
 		</tr>
 		<tr>
-			<td>Age</td> <td><input type="text" id="age" name="age"></td>
+			<td>City</td> <td><input type="text" id="citymod" name="city"></td>
 		</tr>
 		<tr>
-			<td>Gender</td> <td><input type="text" id="gender" name="gender"></td>
+			<td>Aid</td> <td><input type="text" id="aidmod" name="category"></td>
 		</tr>
 		<tr>
-			<td>Nationality</td> <td><input type="text" id="nationality" name="nationality"></td>
+			<td>Phone 1</td> <td><input type="text" id="p1mod" name="phone1"></td>
 		</tr>
 		<tr>
-			<td>Address</td> <td><input type="text" id="address" name="address"></td>
+			<td>Phone 2</td> <td><input type="text" id="p2mod" name="phone2"></td>
 		</tr>
 		<tr>
-			<td>City</td> <td><input type="text" id="city" name="city"></td>
+			<td>Visit/Call</td> <td><input type="text" id="vcmod" name="visitmethod"></td>
 		</tr>
 		<tr>
-			<td>Pincode</td> <td><input type="text" id="pincode" name="pincode"></td>
+			<td>Form Date</td> <td><input type="text" id="fidmod" name="appissue"></td>
 		</tr>
 		<tr>
-			<td>Category</td> <td><input type="text" id="category" name="category"></td>
+			<td>Form Submission Date</td> <td><input type="text" id="fsdmod" name="appsubmit"></td>
 		</tr>
 		<tr>
-			<td>Email</td> <td><input type="text" id="email" name="email"></td>
+			<td>Sanction Status<td> <td><input type="text" id="sanctionmod" name="sanctionstatus"></td>
 		</tr>
 		<tr>
-			<td>Phone</td> <td><input type="text" id="phone" name="phone"></td>
+			<td>Cheque Issue Date</td> <td><input type="text" id="cidmod" name="cidstatus"></td>
 		</tr>
+    <tr>
+      <td>Cheque Status</td> <td><input type="text" id="csmod" name="csstatus"></td>
+    </tr>
+
 		
 </table> <br>
          <input class="one" type="submit" name="submit" value="UPDATE" style="font-size: 1.2vw; width: auto">
@@ -531,20 +537,20 @@ window.onclick = function(event) {
 		table.rows[i].onclick= function(){
 			rIndex=this.rowIndex;
 			
-			document.getElementById('id').value=this.cells[0].innerHTML;
-			document.getElementById('idi').value=this.cells[0].innerHTML;
-			document.getElementById('formnum').value=this.cells[1].innerHTML;
-			document.getElementById('firstname').value=this.cells[2].innerHTML;
-			document.getElementById('lastname').value=this.cells[3].innerHTML;
-			document.getElementById('age').value=this.cells[4].innerHTML;
-			document.getElementById('gender').value=this.cells[5].innerHTML;
-			document.getElementById('nationality').value=this.cells[6].innerHTML;
-			document.getElementById('address').value=this.cells[7].innerHTML;
-			document.getElementById('city').value=this.cells[8].innerHTML;
-			document.getElementById('pincode').value=this.cells[9].innerHTML;
-			document.getElementById('category').value=this.cells[10].innerHTML;
-			document.getElementById('email').value=this.cells[11].innerHTML;
-			document.getElementById('phone').value=this.cells[12].innerHTML;
+			document.getElementById('idmod').value=this.cells[0].innerHTML;
+			document.getElementById('aadharmod').value=this.cells[1].innerHTML;
+			document.getElementById('namemod').value=this.cells[2].innerHTML;
+			document.getElementById('addressmod').value=this.cells[3].innerHTML;
+			document.getElementById('citymod').value=this.cells[4].innerHTML;
+			document.getElementById('aidmod').value=this.cells[5].innerHTML;
+			document.getElementById('p1mod').value=this.cells[6].innerHTML;
+			document.getElementById('p2mod').value=this.cells[7].innerHTML;
+			document.getElementById('vcmod').value=this.cells[8].innerHTML;
+			document.getElementById('fidmod').value=this.cells[9].innerHTML;
+			document.getElementById('fsdmod').value=this.cells[10].innerHTML;
+			document.getElementById('sanctionmod').value=this.cells[11].innerHTML;
+			document.getElementById('cidmod').value=this.cells[12].innerHTML;
+			document.getElementById('csmod').value=this.cells[13].innerHTML;
 
 		}
 	}
@@ -609,6 +615,18 @@ function searchByCategory() {
     }       
   }
 }
+
+<?php
+function delete()
+{
+  if(isset($_POST['delbutton'])){
+
+     $update_active = Update::where('id',$fo_id)
+                      ->update(['cheque_status' =>'Issued']);
+
+  }
+}
+?>
 </script>
 
 </body>

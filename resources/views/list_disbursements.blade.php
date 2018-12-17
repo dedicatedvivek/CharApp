@@ -187,16 +187,16 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 } 
 
-$sql = "SELECT disbursements.sanction_id, savings_master.acc_number,applicants.firstname,disbursements.sanction_amount,disbursements.cheque_number,disbursements.sanction_date FROM savings_master,disbursements,applicants where disbursements.fo_acc_code = savings_master.acc_code AND disbursements.fo_id = applicants.id";
+$sql = "SELECT disbursements.sanction_id, savings_master.acc_number,applicants.name,disbursements.sanction_amount,disbursements.cheque_number,disbursements.sanction_date FROM savings_master,disbursements,applicants where disbursements.fo_acc_code = savings_master.acc_code AND disbursements.fo_id = applicants.id";
 $result = $conn->query($sql);
 echo"<center>";
 if ($result->num_rows > 0) {
 
 
-    echo "<table class='appl-list-table' id='table1'><tr><th>Sr.No</th><th>First Name</th><th>Account Number</th><th>Sanction Amount</th><th>Cheque Number</th><th>Sanction Date</th></tr>";
+    echo "<table class='appl-list-table' id='table1'><tr><th>Sr.No</th><th>Name</th><th>Account Number</th><th>Sanction Amount</th><th>Cheque Number</th><th>Sanction Date</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["sanction_id"]."</td><td>".$row["firstname"]."</td><td>".$row["acc_number"]."</td><td>".$row["sanction_amount"]."</td><td>".$row["cheque_number"]."</td><td>".$row["sanction_date"]."</td> </tr>";
+        echo "<tr><td>".$row["sanction_id"]."</td><td>".$row["name"]."</td><td>".$row["acc_number"]."</td><td>".$row["sanction_amount"]."</td><td>".$row["cheque_number"]."</td><td>".$row["sanction_date"]."</td> </tr>";
     }
 
         echo "</table>";

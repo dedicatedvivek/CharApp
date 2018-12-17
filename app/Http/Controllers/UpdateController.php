@@ -14,25 +14,26 @@ class UpdateController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    function update(Request $req1)
+    function update(Request $req3)
   {
 
-        $id= $req1->input('id');
-        $formnum= $req1->input('formnum');
-        $firstname= $req1->input('firstname');
-        $lastname= $req1->input('lastname');
-        $age= $req1->input('age');
-        $gender= $req1->input('gender');
-        $nationality= $req1->input('nationality');
-        $address= $req1->input('address');
-        $city= $req1->input('city');
-        $pincode= $req1->input('pincode');
-        $category= $req1->input('category');
-        $email= $req1->input('email');
-        $phone=$req1->input('phone');
+        $id= $req3->input('id');
+        $fullname= $req3->input('fullname');
+        $aadharnumber= $req3->input('aadharnumber');
+        $address= $req3->input('address');
+        $city= $req3->input('city');
+        $category= $req3->input('category');
+        $phone1= $req3->input('phone1');
+        $phone2= $req3->input('phone2');
+        $visitmethod= $req3->input('visitmethod');
+        $appissue= $req3->input('appissue');
+        $appsubmit= $req3->input('appsubmit');
+        $sanctionstatus= $req3->input('sanctionstatus');
+        $cidstatus=$req3->input('cidstatus');
+        $csstatus= $req3->input('csstatus');
 
 
-        $data1=$arrayName = array('formnum' =>$formnum ,'firstname' =>$firstname ,'lastname' =>$lastname , 'age' =>$age , 'gender' =>$gender , 'nationality' =>$nationality , 'address' =>$address , 'city' =>$city , 'pincode' =>$pincode ,'category' =>$category ,'email' =>$email,'phone' =>$phone);
+        $data1=$arrayName = array('name' =>$fullname ,'aadhar' =>$aadharnumber , 'address' =>$address , 'city' =>$city , 'category' =>$category , 'phone1' =>$phone1 , 'phone2' =>$phone2 , 'vist_method' =>$visitmethod ,'issue_date' =>$appissue ,'submission_date' =>$appsubmit,'sanction_status' =>$sanctionstatus,'cheque_issue_date' =>$cidstatus,'cheque_status' =>$csstatus);
          
          $applicants = \App\Update::where('id',$id)
                        ->update($data1);

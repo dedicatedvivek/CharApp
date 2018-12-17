@@ -51,6 +51,12 @@ class DisbursementController extends Controller
         $update_sanction_status = Update::where('id',$fo_id)
         							->update(['sanction_status' =>'Accepted']);
 
+                      $update_sanction_status = Update::where('id',$fo_id)
+                      ->update(['cheque_status' =>'Issued']);
+
+                      $update_sanction_status = Update::where('id',$fo_id)
+                      ->update(['cheque_issue_date' =>$sanction_date]);
+
        	return view('list_applicant');
        }
        else{
