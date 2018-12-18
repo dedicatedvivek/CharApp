@@ -8,7 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use DB;
-
+use App\Expense;
 class SavingsController extends Controller
 {
     //class BanksController extends Controller
@@ -37,7 +37,7 @@ class SavingsController extends Controller
         </script>";
 
         
-        return view('new_saving');
+        return   view('new_saving');
     }
      function deposit(Request $req1)
      {
@@ -46,14 +46,15 @@ class SavingsController extends Controller
         var deposit_amount = prompt('Enter deposit amount');
         </script>";
 
-        if(isset($_GET['deposit_amount']
-        { 
-              $da = $_GET['deposit_amount'] 
-        }  
+        $da = "<script> document.write(deposit_amount) </script>";  
+         
+        $bal = Expense::select('acc_balance')->where('acc_code',$depid)->get();
+        
+        $acc_balance = $bal['acc_balance'];
 
-        $new_bal = $da + $acc_balance;
+        $new_balance = $da + $acc_balance;
 
-        $acc_balance = Update::where('acc_code',$acc_code)->update($new_bal);
+        $acc_balance = Update::where('acc_code',$depid)->update($new_balance);
 
         return view('list_savings');
         

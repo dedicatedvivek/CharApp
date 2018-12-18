@@ -445,8 +445,8 @@ display: table-cell;
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="{{ url('/newapplicant') }}"  target="iframe" style="color: white">New Applicant</a></li>
-        <li><a href="{{ url('/listapplicant') }}" target="iframe" style="color: white">Applicants List</a></li>
+        <li><a href="{{ url('/newapplicant') }}"      style="color: white">New Applicant</a></li>
+        <li><a href="{{ url('/listapplicant') }}"     style="color: white">Applicants List</a></li>
         <li>
            <div class="dropdown">
              <button class="dropbtn tag">Banks

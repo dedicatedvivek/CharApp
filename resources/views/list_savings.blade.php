@@ -249,7 +249,7 @@ if ($result->num_rows > 0) {
     
     while($row = $result->fetch_assoc()) {
       echo "<form method='post' action='/deposit_instant'>";
-
+          echo csrf_field();
         echo "<tr><td name='depid'>".$row["acc_code"]."</td><td>".$row["acc_holder"]."</td><td>".$row["acc_number"]."</td><td>".$row["acc_balance"]."</td><td>".$row["b_name"]."</td><td><input type='submit' name='depbutton' value='Deposit amount'></td></tr>";
     }
 
