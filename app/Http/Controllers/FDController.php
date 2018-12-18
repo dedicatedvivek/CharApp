@@ -44,19 +44,21 @@ class FDController extends Controller
         $threshold_list_elem = $th_amt[0];
         $th_amt_value = $threshold_list_elem['th_amt'];
 
-
+        $acc_balance1 = $acc_balance - $deposit_amount;
          
        
        
 
-        if ($acc_balance < $th_amt_value || $acc_balance == $th_amt_value) {
+        if ($acc_balance1 < $th_amt_value || $acc_balance1 == $th_amt_value) {
              echo "<script> 
-             window.confirm('ACCOUNT HAS LOW BALANCE STILL PROCEED ?'); 
+             confirm('ACCOUNT HAS LOW BALANCE STILL PROCEED ?'); 
              </script>";
+
+             return view('new_fd');
          }
 
         
-        if ($deposit_amount< $acc_balance) {
+        elseif ($deposit_amount< $acc_balance) {
 
         DB::table('fixed_deposits')->insert($data);
          $applicants = Expense::where('acc_code',$fo_acc_code)
@@ -68,7 +70,7 @@ class FDController extends Controller
         window.alert('RECORD SUBMITTED SUCCESSFULLY');
         </script>";
         
-        return view('test');
+        return view('new_fd');
     }
 
         

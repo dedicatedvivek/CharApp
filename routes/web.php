@@ -183,6 +183,9 @@ Route::post("store",'application@store');
 
 Route::post("/insert","Controller@insert");
 
+
+Route::post("/deposit_instant","SavingsController@deposit");
+
 Route::post("/userlogin_check","UserLoginController@userlogin_check");
 
 Route::post("/update","UpdateController@update");

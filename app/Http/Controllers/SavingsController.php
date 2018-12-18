@@ -23,11 +23,12 @@ class SavingsController extends Controller
     	$acc_number= $req->input('acc_number');
     	$acc_balance= $req->input('acc_balance');
     	$th_amt = $req->input('th_amt');
-    	
+    	$dep_amt = $req->input('dep_amount');
+        $acc_code = $req->input('acc_code');
     	
     	
 
-        $data=$arrayName = array('fo_b_code' =>$fo_b_code ,'acc_holder' =>$acc_holder ,'acc_number' =>$acc_number ,'acc_balance' =>$acc_balance, 'th_amt' =>$th_amt);
+        $data=$arrayName = array('fo_b_code' =>$fo_b_code ,'acc_holder' =>$acc_holder ,'acc_number' =>$acc_number ,'acc_balance' =>$acc_balance, 'th_amt' =>$th_amt, 'dep_amount' =>$dep_amt);
 
         DB::table('savings_master')->insert($data);
 
@@ -38,6 +39,25 @@ class SavingsController extends Controller
         
         return view('new_saving');
     }
+     function deposit(Request $req1)
+     {
+        $depid = $req1->input('depid');
+        echo "<script> 
+        var deposit_amount = prompt('Enter deposit amount');
+        </script>";
+
+        if(isset($_GET['deposit_amount']
+        { 
+              $da = $_GET['deposit_amount'] 
+        }  
+
+        $new_bal = $da + $acc_balance;
+
+        $acc_balance = Update::where('acc_code',$acc_code)->update($new_bal);
+
+        return view('list_savings');
+        
+     }
 }
 
 

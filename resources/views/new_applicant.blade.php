@@ -332,6 +332,7 @@ body{
               </div></li>
         <li><a  href="{{ url('/aboutus') }}"  style="color: white">About Us</a></li>
         <li><a  href="{{ url('/index') }}"  style="color: white">View Status</a></li>
+        <li><a  href="{{ url('/overview') }}"  style="color: white">Overview</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ url('/home') }}" style="color: white"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
