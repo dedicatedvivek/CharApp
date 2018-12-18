@@ -178,6 +178,15 @@ Route::get("user_about_us",function(){
 	return view ('user_about_us');
 });
 
+Route::get("image",function(){
+
+	return view ('imagetest');
+});
+Route::get("abc",function(){
+
+	return view ('dummy');
+});
+
 
 Route::post("store",'application@store');
 
@@ -186,6 +195,10 @@ Route::post("/insert","Controller@insert");
 Route::post("/userlogin_check","UserLoginController@userlogin_check");
 
 Route::post("/update","UpdateController@update");
+
+Route::post("/delete","UpdateController@delete");
+Route::post("/doc1","UpdateController@doc1");
+Route::post("/doc2","UpdateController@doc2");
 
 Route::post("/insertbank","BanksController@insertbank");
 

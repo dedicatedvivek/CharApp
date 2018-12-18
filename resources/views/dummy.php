@@ -11,27 +11,27 @@ use App\Update;
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-   $(function(){ $('tr:contains(Accepted)').addClass('accepted'); });
-   $(function(){ $('tr:contains(Pending/Rejected)').addClass('pending'); });
+	 $(function(){ $('tr:contains(Accepted)').addClass('accepted'); });
+	 $(function(){ $('tr:contains(Pending/Rejected)').addClass('pending'); });
 
 
 
 
 
 
-   
+	 
 </script>
 <style>
 body{
-  background-color: #f4f2ef;
-  background-repeat: no-repeat;
-  background-size:cover;
+	background-color: #f4f2ef;
+	background-repeat: no-repeat;
+	background-size:cover;
 }
 
 
 
 #table1{
-   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 
@@ -39,13 +39,13 @@ body{
 }
 #table1 td, #table1 th
 {
-  border: 2px solid black;
-  padding: 2px;
-  font-family: monospace;
-  font-size: 0.8vw;
-  color: #19303A;
-  font-weight: bold;
-  font-style: italic;
+	border: 2px solid black;
+	padding: 2px;
+	font-family: monospace;
+	font-size: 0.8vw;
+	color: #19303A;
+	font-weight: bold;
+	font-style: italic;
 }
 
 .accepted:hover{background-color: #c6f733;}
@@ -59,11 +59,11 @@ body{
 
 
 #table1 tr{
-  cursor: pointer;
+	cursor: pointer;
 }
 
 #table1 th {
-   padding-top: 12px;
+	 padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #2A88AD;
@@ -71,13 +71,13 @@ body{
 }
 
 input {
-  padding: 1px;
-  color: #19303A;
-  border: 2px solid #19303A;
-  
+	padding: 1px;
+	color: #19303A;
+	border: 2px solid #19303A;
+	
 }
 .one {
-  width: 100px;
+	width: 100px;
 }
 .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: red;
@@ -180,14 +180,14 @@ input {
 }
 
 /* The Close Button */
-.close1, .close2 {
+.close1 {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
    }
   .close1:hover,
-.close1:focus,.close2:hover,.close:focus {
+.close1:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -212,7 +212,7 @@ input {
 </style>
 
 
-  
+	
 </script>
 
 
@@ -324,20 +324,19 @@ echo"<center>";
 
 
 
-    echo "<table class='appl-list-table' id='table1'><tr><th>Applicant ID</th><th>Aadhar Number</th><th>Name</th><th>Address</th><th>City</th><th>Aid<th>Phone 1</th><th>Phone 2</th><th>Visit/Call</th><th>Form Issue Date</th><th>Form Submission Date</th><th>Sanction Status</th><th>Cheque Issue Date</th><th>Cheque Status</th><th>Doc 1</th><th>Doc 2</th><th>Delete</th><th>Edit</th><th>Sanction Amount</th></tr>";
+    echo "<table class='appl-list-table' id='table1'><tr><th>Applicant ID</th><th>Aadhar Number</th><th>Name</th><th>Address</th><th>City</th><th>Aid<th>Phone 1</th><th>Phone 2</th><th>Visit/Call</th><th>Form Issue Date</th><th>Form Submission Date</th><th>Sanction Status</th><th>Cheque Issue Date</th><th>Cheque Status</th><th>Doc 1</th><th>Doc 2</th><th>Edit</th><th>Delete</th><th>Sanction Amount</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
 
 
-        echo "<form method='POST' action='\delete'>"
+        echo "<form method='POST' action='#'>"
         ?>
         {{ csrf_field() }}
         <?php
-        echo"<tr onclick='showappl()'><td>".$row["id"]." </td><td>".$row["aadhar"]."</td><td>".$row["name"]."</td><td>".$row["address"]."</td><td>".$row["city"]."</td><td>".$row["category"]."</td><td>".$row["phone1"]."</td><td>".$row["phone2"]."</td><td>".$row["vist_method"]."</td><td>".$row["issue_date"]."</td><td>".$row["submission_date"]."</td><td>".$row["sanction_status"]."</td><td>".$row["cheque_issue_date"]."</td><td>".$row["cheque_status"]."</td><td><input type='submit' formaction='/doc1' name='doc1' value = 'view'></td><td><input type='submit' name='doc2' formaction='/doc2' value = 'view'></td><td><input type='submit' class='click-btn' type='submit' name='delbutton' value='delete'><input type='Hidden' name='del_id' value=' ".$row["id"]."'></form></td><td><button class='click-btn' onclick='modalopen()'>EDIT</button></td><td><button class='click-btn' onclick='modalopen_delete()'>CLICK HERE</button></td></tr>";
+        echo"<tr onclick='showappl()'><td name='delid'><input type='text' name='delid' value='".$row["id"]."' hidden> ".$row["id"]."</td><td>".$row["aadhar"]."</td><td>".$row["name"]."</td><td>".$row["address"]."</td><td>".$row["city"]."</td><td>".$row["category"]."</td><td>".$row["phone1"]."</td><td>".$row["phone2"]."</td><td>".$row["vist_method"]."</td><td>".$row["issue_date"]."</td><td>".$row["submission_date"]."</td><td>".$row["sanction_status"]."</td><td>".$row["cheque_issue_date"]."</td><td>".$row["cheque_status"]."</td><td><input type='submit' formaction='/doc1' name='doc1' value = 'view'></td><td><input type='submit' name='doc2' formaction='/doc2' value = 'view'></td><td><button class='click-btn' onclick='modalopen()'>EDIT</button></td><td><input type='submit' class='click-btn' type='submit' name='delbutton' value='delete'></form></td><td><button class='click-btn' onclick='modalopen_delete()'>CLICK HERE</button></td></tr>";
     }
 
         echo "</table>";
-       
 
 
 echo"</center>";
@@ -360,59 +359,59 @@ $length= count($savings);
 
 <center> <br>
 <div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class= "close1">&times;</span>
+	<div class="modal-content">
+		<span class= "close1">&times;</span>
 
 
 
 <form id='form1' action="/update" method='POST'>
-  {{ csrf_field() }}
-  <table id='table_form'>
-    <tr>
-      <td>id</td> <td><input type="text" id='idi' name='idi' readonly></td>
-    </tr>
-  
-    <tr>
-      <td>Aadhar Number</td> <td><input type="text" id="aadharmod" name="aadharnumber"></td>
-    </tr>
-    <tr>
-      <td>Name</td> <td><input type="text" id="namemod" name="fullname"></td>
-    </tr>
-    <tr>
-      <td>Address</td> <td><input type="text" id="addressmod" name="address"></td>
-    </tr>
-    <tr>
-      <td>City</td> <td><input type="text" id="citymod" name="city"></td>
-    </tr>
-    <tr>
-      <td>Aid</td> <td><input type="text" id="aidmod" name="category"></td>
-    </tr>
-    <tr>
-      <td>Phone 1</td> <td><input type="text" id="p1mod" name="phone1"></td>
-    </tr>
-    <tr>
-      <td>Phone 2</td> <td><input type="text" id="p2mod" name="phone2"></td>
-    </tr>
-    <tr>
-      <td>Visit/Call</td> <td><input type="text" id="vcmod" name="visitmethod"></td>
-    </tr>
-    <tr>
-      <td>Form Date</td> <td><input type="text" id="fidmod" name="appissue"></td>
-    </tr>
-    <tr>
-      <td>Form Submission Date</td> <td><input type="text" id="fsdmod" name="appsubmit"></td>
-    </tr>
-    <tr>
-      <td>Sanction Status<td> <td><input type="text" id="sanctionmod" name="sanctionstatus"></td>
-    </tr>
-    <tr>
-      <td>Cheque Issue Date</td> <td><input type="text" id="cidmod" name="cidstatus"></td>
-    </tr>
+	{{ csrf_field() }}
+	<table id='table_form'>
+		<tr>
+			<td>id</td> <td><input type="number" id="idmod" name="id" readonly></td>
+		</tr>
+	
+		<tr>
+			<td>Aadhar Number</td> <td><input type="text" id="aadharmod" name="aadharnumber"></td>
+		</tr>
+		<tr>
+			<td>Name</td> <td><input type="text" id="namemod" name="fullname"></td>
+		</tr>
+		<tr>
+			<td>Address</td> <td><input type="text" id="addressmod" name="address"></td>
+		</tr>
+		<tr>
+			<td>City</td> <td><input type="text" id="citymod" name="city"></td>
+		</tr>
+		<tr>
+			<td>Aid</td> <td><input type="text" id="aidmod" name="category"></td>
+		</tr>
+		<tr>
+			<td>Phone 1</td> <td><input type="text" id="p1mod" name="phone1"></td>
+		</tr>
+		<tr>
+			<td>Phone 2</td> <td><input type="text" id="p2mod" name="phone2"></td>
+		</tr>
+		<tr>
+			<td>Visit/Call</td> <td><input type="text" id="vcmod" name="visitmethod"></td>
+		</tr>
+		<tr>
+			<td>Form Date</td> <td><input type="text" id="fidmod" name="appissue"></td>
+		</tr>
+		<tr>
+			<td>Form Submission Date</td> <td><input type="text" id="fsdmod" name="appsubmit"></td>
+		</tr>
+		<tr>
+			<td>Sanction Status<td> <td><input type="text" id="sanctionmod" name="sanctionstatus"></td>
+		</tr>
+		<tr>
+			<td>Cheque Issue Date</td> <td><input type="text" id="cidmod" name="cidstatus"></td>
+		</tr>
     <tr>
       <td>Cheque Status</td> <td><input type="text" id="csmod" name="csstatus"></td>
     </tr>
 
-    
+		
 </table> <br>
          <input class="one" type="submit" name="submit" value="UPDATE" style="font-size: 1.2vw; width: auto">
          &nbsp &nbsp &nbsp &nbsp
@@ -423,27 +422,27 @@ $length= count($savings);
 </div>
 </div>
 <div id="myModal1" class="modal1">
-  <div class="modal-content1">
-  <span class= "close2">&times;</span>
+	<div class="modal-content1">
+	
 
 <form id="form1" action="/sanction_amount" method="post">
-  {{ csrf_field() }}
-  <table id='table_form'>
-    <tr>
-      <td>id</td> <td><input type="text" id='idi1' name='idi' readonly></td>
-    </tr>
-      
-    <tr>
-      <td>Sanction Date: </td> <td><input type="date" id="sanction_date" name="sanction_date"></td>
-    </tr>
-    <tr>
-      <td>Sanction Amount: </td> <td><input type="number" id="sanction_amount" name="sanction_amount"></td>
-    </tr>
-    <tr>
-      <td>Cheque Number: </td> <td><input type="text" id="cheque_number" name="cheque_number"></td>
-    </tr>
-    <tr>
-      <td>Savings Account Number: </td> <td><select id="saving_select" name= "acc_number">
+	{{ csrf_field() }}
+	<table id='table_form'>
+		<tr>
+			<td>id</td> <td><input type="number" id="idi" name="id" readonly></td>
+		</tr>
+			
+		<tr>
+			<td>Sanction Date: </td> <td><input type="date" id="sanction_date" name="sanction_date"></td>
+		</tr>
+		<tr>
+			<td>Sanction Amount: </td> <td><input type="number" id="sanction_amount" name="sanction_amount"></td>
+		</tr>
+		<tr>
+			<td>Cheque Number: </td> <td><input type="text" id="cheque_number" name="cheque_number"></td>
+		</tr>
+		<tr>
+			<td>Savings Account Number: </td> <td><select id="saving_select" name= "acc_number">
         <?php
         for ($i=0; $i <$length ; $i++) { 
            $list_elem = $savings[$i];
@@ -453,8 +452,8 @@ $length= count($savings);
          } 
         ?>
       </select></td>
-    </tr>
-    
+		</tr>
+		
 </table> <br>
          <input class="one" type="submit" name="submit" value="UPDATE" style="font-size: 1.2vw; width: auto">
          &nbsp &nbsp &nbsp &nbsp
@@ -472,17 +471,16 @@ $length= count($savings);
 <script>
 // Get the modal
 var modal = document.getElementById('myModal');
-var modal1 = document.getElementById('myModal1');
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close1")[0];
-var span1 = document.getElementsByClassName("close2")[0];
+
 // When the user clicks the button, open the modal 
 
-  
+	
 
  function modalopen() {
     modal.style.display = "block";
@@ -494,23 +492,12 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 
-span1.onclick = function() {
-    modal1.style.display = "none";
-}
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
-
-window.onclick = function(event) {
-    if (event.target == modal1) {
-        modal1.style.display = "none";
-    }
-}
-
 
 
 // Get the modal
@@ -524,7 +511,7 @@ var span1 = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 
-  
+	
 
  function modalopen_delete() {
     modal1.style.display = "block";
@@ -547,32 +534,31 @@ window.onclick = function(event) {
 
 
 
-        
+     		
 
 <script type="text/javascript">
-  let table= document.getElementById('table1')   ;
-  for(let i=0; i<table.rows.length; i++){
-    table.rows[i].onclick= function(){
-      rIndex=this.rowIndex;
-      
-      document.getElementById('idi').value=this.cells[0].innerHTML;
-      document.getElementById('idi1').value=this.cells[0].innerHTML;
-      document.getElementById('aadharmod').value=this.cells[1].innerHTML;
-      document.getElementById('namemod').value=this.cells[2].innerHTML;
-      document.getElementById('addressmod').value=this.cells[3].innerHTML;
-      document.getElementById('citymod').value=this.cells[4].innerHTML;
-      document.getElementById('aidmod').value=this.cells[5].innerHTML;
-      document.getElementById('p1mod').value=this.cells[6].innerHTML;
-      document.getElementById('p2mod').value=this.cells[7].innerHTML;
-      document.getElementById('vcmod').value=this.cells[8].innerHTML;
-      document.getElementById('fidmod').value=this.cells[9].innerHTML;
-      document.getElementById('fsdmod').value=this.cells[10].innerHTML;
-      document.getElementById('sanctionmod').value=this.cells[11].innerHTML;
-      document.getElementById('cidmod').value=this.cells[12].innerHTML;
-      document.getElementById('csmod').value=this.cells[13].innerHTML;
+	let table= document.getElementById('table1')   ;
+	for(let i=0; i<table.rows.length; i++){
+		table.rows[i].onclick= function(){
+			rIndex=this.rowIndex;
+			
+			document.getElementById('idmod').value=this.cells[0].innerHTML;
+			document.getElementById('aadharmod').value=this.cells[1].innerHTML;
+			document.getElementById('namemod').value=this.cells[2].innerHTML;
+			document.getElementById('addressmod').value=this.cells[3].innerHTML;
+			document.getElementById('citymod').value=this.cells[4].innerHTML;
+			document.getElementById('aidmod').value=this.cells[5].innerHTML;
+			document.getElementById('p1mod').value=this.cells[6].innerHTML;
+			document.getElementById('p2mod').value=this.cells[7].innerHTML;
+			document.getElementById('vcmod').value=this.cells[8].innerHTML;
+			document.getElementById('fidmod').value=this.cells[9].innerHTML;
+			document.getElementById('fsdmod').value=this.cells[10].innerHTML;
+			document.getElementById('sanctionmod').value=this.cells[11].innerHTML;
+			document.getElementById('cidmod').value=this.cells[12].innerHTML;
+			document.getElementById('csmod').value=this.cells[13].innerHTML;
 
-    }
-  }
+		}
+	}
 </script>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 

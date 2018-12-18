@@ -216,10 +216,10 @@ body{
 </style>
 <script type="text/javascript">
 	function validation(){
-		if (document.appl.firstname.value=="" ||
-			!isNaN(document.appl.firstname.value)){
+		if (document.appl.fullname.value=="" ||
+			!isNaN(document.appl.fullname.value)){
 			alert("Kindly Provide Valid First Name!!!");
-			document.appl.firstname.focus();  
+			document.appl.fullname.focus();  
 			return false;
 
 		}
@@ -332,6 +332,7 @@ body{
               </div></li>
         <li><a  href="{{ url('/aboutus') }}"  style="color: white">About Us</a></li>
         <li><a  href="{{ url('/index') }}"  style="color: white">View Status</a></li>
+        <li><a  href="{{ url('/overview') }}"  style="color: white">Overview</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ url('/home') }}" style="color: white"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -357,8 +358,8 @@ body{
 <div class = "inner-wrap">
 
     
-	    <label for="First Name">Full Name <input type="text" name="fullname" /></label>
-   		<label for="Aadhar Number">Aadhar Number<input type="text" name="aadharnumber"  /></label>
+	    <label for="First Name">Full Name <input type="text" name="fullname" required /></label>
+   		<label for="Aadhar Number">Aadhar Number<input type="text" name="aadharnumber" required /></label>
    		
       </div>
     
@@ -369,10 +370,10 @@ body{
         
  
 
-        <label for="address">Address <input type="text" name="address" max=""  /></label>
+        <label for="address">Address <input type="text" name="address" max=""  required/></label>
 
 
-        <label for="City">City <input type="text" name="city"  /></label>
+        <label for="City">City <input type="text" name="city"  required/></label>
  
 
        
@@ -408,8 +409,8 @@ body{
         
         <input type="radio" name="visitmethod" value="person" checked>Person <br>
         <input type="radio" name="visitmethod" value="call" checked>Call <br> </label>
-        <label for="Issue Date">Application Issue Date: <input type="date" name="appissue"  /></label>
-        <label for="Submission Date">Application Submission Date: <input type="date" name="appsubmit"  /></label>
+        <label for="Issue Date">Application Issue Date: <input type="date" name="appissue"  required /></label>
+        <label for="Submission Date">Application Submission Date: <input type="date" name="appsubmit"  required /></label>
        
 
 
@@ -421,9 +422,9 @@ body{
 
 		
 
-		<label for="image">Document 1(Aadhar Card)	<input type="file" name="doc1" /></label>
+		<label for="image">Document 1(Aadhar Card)	<input type="file" name="doc1" required /></label>
 
-		<label for="image">Document 2(Salary Certificate/Letter) <input type="file" name="doc2" /></label>
+		<label for="image">Document 2(Salary Certificate/Letter) <input type="file" name="doc2" required /></label>
 
 </div>
 <center>

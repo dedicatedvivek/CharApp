@@ -43,7 +43,52 @@ class UpdateController extends BaseController
          return view('list_applicant');     
 
      }
-     	
+
+     function delete(Request $req3)
+{
+    
+ $delud= $req3->input('del_id');
+ // $doc1view= $req3->input('doc1view');
+ // $doc2view= $req3->input('doc2view');
+
+    
+
+    $set0 = 0;
+
+     $datadel=$arrayName = array('active_status' =>$set0);
+  
+
+    
+
+
+     $update_active = Update::where('id',$delud)
+                      ->update($datadel);
+
+      return view('list_applicant');
+
+
+
+
+
+  
+}
+
+function doc1(Request $reqd)
+{
+   $doc1= $reqd->input('del_id');
+   return view('imagetest') -> with('img_id',$doc1);
+
+}
+  
+function doc2(Request $reqss)
+{
+   $doc2= $reqss->input('del_id');
+   
+   return view('imagetest') -> with('img_id2',$doc2);
+
+
+
+}
      
 }     
     

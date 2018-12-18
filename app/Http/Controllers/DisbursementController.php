@@ -20,7 +20,7 @@ class DisbursementController extends Controller
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
      function sanction_amount(Request $req){
-     	$fo_id= $req->input('id');
+     	$fo_id= $req->input('idi');
     	$sanction_amount= $req->input('sanction_amount');
         $sanction_date = $req->input('sanction_date');
         $cheque_number = $req->input('cheque_number');
