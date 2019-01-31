@@ -236,19 +236,21 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT savings_master.fo_b_code, savings_master.acc_holder, savings_master.acc_number, savings_master.acc_balance, banks_master.b_name FROM savings_master,banks_master WHERE savings_master.fo_b_code = banks_master.b_code";
+$sql = "SELECT savings_master.fo_b_code, savings_master.acc_holder, savings_master.acc_number,savings_master.acc_code, savings_master.acc_balance, banks_master.b_name FROM savings_master,banks_master WHERE savings_master.fo_b_code = banks_master.b_code";
 $result = $conn->query($sql);
 
 echo"<center>";
 if ($result->num_rows > 0) {
 
 
-    echo "<table id='table1'><tr><th>Bank Code</th><th>Account Holder</th><th>Account Number</th><th>Account Balance</th><th>Bank Name</th></tr>";
+    echo "<table id='table1'><tr><th>Sr No</th><th>Account Holder</th><th>Account Number</th><th>Account Balance</th><th>Bank Name</th><th>Click To Add Money</th></tr>";
     
     // output data of each row
     
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["fo_b_code"]."</td><td>".$row["acc_holder"]."</td><td>".$row["acc_number"]."</td><td>".$row["acc_balance"]."</td><td>".$row["b_name"]."</td></tr>";
+      echo "<form method='post' action='/deposit_instant'>";
+          echo csrf_field();
+        echo "<tr><td name='depid'>".$row["acc_code"]."</td><td>".$row["acc_holder"]."</td><td>".$row["acc_number"]."</td><td>".$row["acc_balance"]."</td><td>".$row["b_name"]."</td><td><input type='submit' name='depbutton' value='Deposit amount'></td></tr>";
     }
 
         echo "</table>";

@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  
   
   <title></title>
 </head>
@@ -55,9 +57,9 @@
                  <a  href="{{ url('/fd_list') }}">FD LIST</a>
                  
               </div></li>
-        <li><a  href="{{ url('/aboutus') }}" target="iframe" style="color: white">About Us</a></li>
-        <li><a  href="{{ url('/index') }}" target="iframe" style="color: white">View Status</a></li>
-        <li><a  href="{{ url('/overview') }}" target="iframe" style="color: white">overview</a></li>
+        <li><a  href="{{ url('/aboutus') }}"  style="color: white">About Us</a></li>
+        <li><a  href="{{ url('/index') }}"  style="color: white">View Status</a></li>
+        <li><a  href="{{ url('/overview') }}"  style="color: white">Overview</a></li>
        
       </ul>
       <ul class="nav navbar-nav navbar-right">

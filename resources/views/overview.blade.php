@@ -302,7 +302,7 @@ display: table-cell;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 100;
 }
 
 .dropdown-content a {
@@ -312,6 +312,7 @@ display: table-cell;
     text-decoration: none;
     display: block;
     text-align: left;
+    z-index: 100;
 }
 
 .dropdown-content a:hover {
@@ -347,7 +348,7 @@ display: table-cell;
   
   left:0px;
   top: 50px;
-  z-index: 100;
+  z-index: 50;
 }
 .formhead{
 	color: black;
@@ -366,14 +367,8 @@ display: table-cell;
   
   left:650px;
   top: 440px;
-  z-index: 100;
+  z-index: 50;
 }
-
-
-
-
-
-
 
 .form-style-10{
     width:80%;
@@ -426,6 +421,7 @@ display: table-cell;
 }
 
 .active {
+
     background-color: red;
     color: white;
 }
@@ -433,6 +429,10 @@ display: table-cell;
     background-color: rgb(35,162,218);
 }
 
+
+
+
+  
 
 
 
@@ -455,8 +455,11 @@ display: table-cell;
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="{{ url('/newapplicant') }}"   style="color: white">New Applicant</a></li>
-        <li><a href="{{ url('/listapplicant') }}"  style="color: white">Applicants List</a></li>
+
+       
+      <li><a href="{{ url('/newapplicant') }}"      style="color: white">New Applicant</a></li>
+        <li><a href="{{ url('/listapplicant') }}"     style="color: white">Applicants List</a></li>
+
         <li>
            <div class="dropdown">
              <button class="dropbtn tag">Banks
@@ -471,11 +474,13 @@ display: table-cell;
         </li>
         <li>
           <div class="dropdown">
-             <button class="dropbtn active ">Savings
+
+             <button class="dropbtn ">Savings
                <i class="fa fa-caret-down"></i>
              </button>
               <div class="dropdown-content">
-                 <a class="active" href="{{ url('/new_saving') }}" >ADD A SAVINGS ACCOUNT</a>
+                 <a href="{{ url('/new_saving') }}" >ADD A SAVINGS ACCOUNT</a>
+
                  <a href="{{ url('/list_savings') }}">ACCOUNTS' DETAILS</a>
                  
               </div>
@@ -493,7 +498,12 @@ display: table-cell;
               </div></li>
         <li><a  href="{{ url('/aboutus') }}"  style="color: white">About Us</a></li>
         <li><a  href="{{ url('/index') }}"  style="color: white">View Status</a></li>
+
         <li><a class="active"  href="{{ url('/overview') }}"  style="color: white">Overview</a></li>
+
+        
+       
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ url('/home') }}" style="color: white"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -501,6 +511,7 @@ display: table-cell;
     </div>
   </div>
 </nav>
+
 
 <?php
 $acc_values= Expense::select('acc_balance')

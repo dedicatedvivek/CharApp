@@ -425,6 +425,14 @@ body{
 		<label for="image">Document 1(Aadhar Card)	<input type="file" name="doc1" required /></label>
 
 		<label for="image">Document 2(Salary Certificate/Letter) <input type="file" name="doc2" required /></label>
+    
+    <label for="monthly_income"> Monthly Income <input type="number" id="month_inc" name="monthly_income" onchange="incomecalc();" required /></label>
+
+    <label for="annual_income"> Annual Income  <input type="number" value="" id="annual_inc" name="annual_income" required disabled/></label>
+
+    <label for="applicant_expenses"> Applicant Expenses  <input type="number" name="applicant_expenses" required /></label>
+
+    <label for="earning_members"> Number of earning members <input type="number" name="earning_members" required /></label>
 
 </div>
 <center>
@@ -441,6 +449,15 @@ body{
 </div>
 </marquee>
 </footer>
+<script type="text/javascript">
+ function incomecalc(){
+
+    var month_inc = document.getElementById("month_inc").value;
+    document.getElementById("annual_inc").value = 12 * month_inc; 
+
+
+ }
+</script>
 </body>
 </html>
 

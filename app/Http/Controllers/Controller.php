@@ -30,9 +30,14 @@ class Controller extends BaseController
         $appsubmit= $req1->input('appsubmit');
         $doc1= $req1->input('doc1');
         $doc2=$req1->input('doc2');
+        $monthly_income=$req1->input('monthly_income');
+        $annual_income=$req1->input('annual_income');
+        $applicant_expenses=$req1->input('applicant_expenses');
+        $earning_members=$req1->input('earning_members');
 
 
-        $data1=$arrayName = array('name' =>$fullname ,'aadhar' =>$aadharnumber , 'address' =>$address , 'city' =>$city , 'category' =>$category , 'phone1' =>$phone1 , 'phone2' =>$phone2 , 'vist_method' =>$visitmethod ,'issue_date' =>$appissue ,'submission_date' =>$appsubmit,'doc1' =>$doc1,'doc2' =>$doc2);
+
+        $data1=$arrayName = array('name' =>$fullname ,'aadhar' =>$aadharnumber , 'address' =>$address , 'city' =>$city , 'category' =>$category , 'phone1' =>$phone1 , 'phone2' =>$phone2 , 'vist_method' =>$visitmethod ,'issue_date' =>$appissue ,'submission_date' =>$appsubmit,'doc1' =>$doc1,'doc2' =>$doc2,'monthly_income' =>$monthly_income, 'annual_income' => $annual_income, 'applicant_expenses' =>$applicant_expenses, 'earning_members' =>$earning_members);
 
 
         $aadharchklist = applicant::select('aadhar')->

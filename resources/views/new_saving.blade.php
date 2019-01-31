@@ -51,7 +51,7 @@ body{
     outline: none;
     color: white;
     padding: 14px 16px;
-    
+    z-index: 100;
     font-family: inherit;
     margin: 0;
 }
@@ -65,9 +65,9 @@ body{
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
+    z-index: 100;
 
+}
 .dropdown-content a {
     float: none;
     color: black;
@@ -75,6 +75,7 @@ body{
     text-decoration: none;
     display: block;
     text-align: left;
+    z-index: 100;
 }
 
 .dropdown-content a:hover {
@@ -166,6 +167,7 @@ body{
     color: #2A88AD;
     margin-bottom: 5px;
 }
+
 .form-style-10 .section span {
     background: #2A88AD;
     padding: 5px 10px 5px 10px;
@@ -179,6 +181,7 @@ body{
     color: #fff;
     margin-top: -3px;
 }
+
 .form-style-10 input[type="button"], 
 .form-style-10 input[type="submit"]{
     background: #2A88AD;
@@ -195,6 +198,7 @@ body{
     border: 1px solid #257C9E;
     font-size: 15px;
 }
+
 .form-style-10 input[type="button"]:hover, 
 .form-style-10 input[type="submit"]:hover{
     background: #2A6881;
@@ -202,6 +206,7 @@ body{
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 }
+
 .form-style-10 .privacy-policy{
     float: right;
     width: 250px;
@@ -388,6 +393,7 @@ transform: scaleY(1);}
     <label >ACCOUNT HOLDER <input type="text" name="acc_holder"  /></label>
     <label >ACCOUNT NUMBER<input type="text" name="acc_number"  /></label>
     <label >ACCOUNT BALANCE<input type="text" name="acc_balance"  /></label>
+    <label >DEPOSIT AMOUNT<input type="text" name="dep_amount"  /></label>
     <label >THRESHOLD AMOUNT<input type="text" name="th_amt"  /></label>
 </div>
 

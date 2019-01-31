@@ -353,9 +353,11 @@ $length= count($savings);
          <option class="expense_options" name="expense_type">MISCELLANEOUS</option>
         </SELECT></label>
     
-        <label for="EXPENSE AMOUNT">EXPENSE AMOUNT
-          <br><br>
-    	<input type="float" name="expense_amount"></label>
+       <label for="EXPENSE AMOUNT">EXPENSE AMOUNT
+    
+      <input type="float" name="expense_amount" ></label>  
+          
+    	
         <label for="SAVINGS ACCOUNT">SAVINGS ACCOUNT
       <select id="saving_select" name= "acc_number">
         <?php
