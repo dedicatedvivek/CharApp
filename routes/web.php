@@ -199,6 +199,8 @@ Route::post("/userlogin_check","UserLoginController@userlogin_check");
 
 Route::post("/update","UpdateController@update");
 
+Route::post("/rtdown","Controller@rtdown");
+
 Route::post("/delete","UpdateController@delete");
 Route::post("/doc1","UpdateController@doc1");
 Route::post("/doc2","UpdateController@doc2");

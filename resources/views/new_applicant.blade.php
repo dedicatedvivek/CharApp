@@ -360,6 +360,7 @@ body{
     
 	    <label for="First Name">Full Name <input type="text" name="fullname" required /></label>
    		<label for="Aadhar Number">Aadhar Number<input type="text" name="aadharnumber" required /></label>
+
    		
       </div>
     
@@ -390,6 +391,8 @@ body{
     	</select>
     </label>
 
+
+
  </div>
     <div class = "section"><span>4</span>CONTACT DETAILS</div>
     <div class = "inner-wrap">
@@ -406,9 +409,12 @@ body{
     <div class = "inner-wrap">
 
         <label for="visitmethod">CONTACTED ON: <br><br>
+
         
         <input type="radio" name="visitmethod" value="person" checked>Person <br>
         <input type="radio" name="visitmethod" value="call" checked>Call <br> </label>
+
+        <label for="City">Recommended By: <input type="text" name="recommended_by" /></label>
         <label for="Issue Date">Application Issue Date: <input type="date" name="appissue"  required /></label>
         <label for="Submission Date">Application Submission Date: <input type="date" name="appsubmit"  required /></label>
        
@@ -431,6 +437,8 @@ body{
     <label for="annual_income"> Annual Income  <input type="number" value="" id="annual_inc" name="annual_income" required disabled/></label>
 
     <label for="applicant_expenses"> Applicant Expenses  <input type="number" name="applicant_expenses" required /></label>
+
+    <label for="family_members"> Total members in Family: <input type="number" name="family_members" required /></label>
 
     <label for="earning_members"> Number of earning members <input type="number" name="earning_members" required /></label>
 

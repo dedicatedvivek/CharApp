@@ -208,6 +208,14 @@ input {
   background-color: red;
 }
 
+#rtright{
+  position: absolute;
+  right: 0px;
+  width: 138px;
+  
+  padding: 2px;
+}
+
 
 </style>
 
@@ -294,6 +302,12 @@ input {
         <span>
     <input type="text" id="myInput1" onkeyup="searchByCategory()" placeholder="Search by Category.." title="Type in a name">
         </span>
+<form method="POST" action="/rtdown">
+  {{ csrf_field() }}
+         <span id="rtright">
+    <input type="submit" id="rtdown"  value="Download IT Returns">
+        </span>
+      </form>
 </div>
 </aside>
 
