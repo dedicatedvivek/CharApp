@@ -187,6 +187,16 @@ Route::get("abc",function(){
 	return view ('dummy');
 });
 
+Route::get("itreturn",function(){
+
+	return view ('itreturn');
+});
+
+Route::get("voucher",function(){
+
+	return view ('voucher');
+});
+
 
 Route::post("store",'application@store');
 
@@ -198,6 +208,8 @@ Route::post("/deposit_instant","SavingsController@deposit");
 Route::post("/userlogin_check","UserLoginController@userlogin_check");
 
 Route::post("/update","UpdateController@update");
+
+Route::post("/returnit","Controller@returnit");
 
 Route::post("/rtdown","Controller@rtdown");
 

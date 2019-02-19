@@ -72,16 +72,36 @@ class Controller extends BaseController
         return view('list_applicant');
     }
 
-    function rtdown(Request $req2)
+    // function rtdown(Request $req2)
 
-    {
+    // {
 
-        $sql = "SELECT applicants.cheque_issue_date, applicants.name,applicants.city,applicants.recommended_by,applicants.monthly_income,applicants.annual_income,applicants.category,applicants.applicant_expenses,applicnts.family_members,applicants.earning_members,disbursements.sanction_amount,disbursements.sanction_date,disbursements.cheque_number FROM disbursements,applicants where disbursements.fo_id = applicants.id";
+    //     $servername = "localhost";
+    //     $username = "root";
+    //     $password = "";
+    //     $dbname = "auth";
+
+    //     // Create connection
+    //     $conn = mysqli_connect($servername, $username, $password, $dbname);
+    //     // Check connection
+    //     if (!$conn) {
+    //         die("Connection failed: " . mysqli_connect_error());
+    //     } 
+
+    //     $sql = "SELECT applicants.cheque_issue_date, applicants.name,applicants.city,applicants.recommended_by,applicants.monthly_income,applicants.annual_income,applicants.category,applicants.applicant_expenses,applicnts.family_members,applicants.earning_members,disbursements.sanction_amount,disbursements.sanction_date,disbursements.cheque_number FROM disbursements,applicants where disbursements.fo_id = applicants.id";
+
+        
        
-       applicant::select('cheque_issue_date','name','city','recommended_by','monthly_income','annual_income','category','applicant_expenses','family_members','earning_members',)
+       
 
-    }
+    // }
     
+
+  function returnit(Request $req1)
+
+    {  
+            return view('itreturn');
+    }
 }
 
 

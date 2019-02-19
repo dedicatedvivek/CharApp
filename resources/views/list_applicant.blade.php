@@ -302,7 +302,7 @@ input {
         <span>
     <input type="text" id="myInput1" onkeyup="searchByCategory()" placeholder="Search by Category.." title="Type in a name">
         </span>
-<form method="POST" action="/rtdown">
+<form method="POST" action="\returnit">
   {{ csrf_field() }}
          <span id="rtright">
     <input type="submit" id="rtdown"  value="Download IT Returns">
