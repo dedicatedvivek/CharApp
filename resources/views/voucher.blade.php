@@ -110,16 +110,85 @@
 				</div>
 
 				
+               </td>
+		</tr>
+    </table>
+    </center> <br> <br> <br>
 
+    <center>
+	<table id="vouchertable" border="2px solid black">
+   <thead> ISSUED CHEQUE </thead>
 
+    <tr id="chq_no">
+			<td>
+				<div>
+					<SPAN>
+					<label>
+					Cheque No.
+					</label>
+					</SPAN>
+					<span>
+						
+							_____________________________
+						
+					</span>
+				</div>
 			</td>
 		</tr>
 
+		<tr id="date">
+			<td>
+				<div>
+					<SPAN>
+					<label>
+					Date
+					</label>
+					</SPAN>
+					<span>
+						
+							_______________
+						
+					</span>
+				</div>
+			</td>
+		</tr>
 
+<tr id="rupees">
+			<td>
+				<div>
+					<SPAN>
+					<label>
+					Rupees
+					</label>
+					</SPAN>
+					<span>
+						
+							_______________
+						
+					</span>
+				</div>
+			</td>
+		</tr>
 
-	</table>
-
-	</center>
-
+	<tr id="bank">
+			<td>
+				<div>
+					<SPAN>
+					<label>
+					Bank
+					</label>
+					</SPAN>
+					<span>
+						
+							_______________
+						
+					</span>
+				</div>
+			</td>
+		</tr>
+	</table> <br> <br> <br> <br>  
+	_____________________ <br>
+	Receiver's Signature
+</center>
 </body>
 </html>

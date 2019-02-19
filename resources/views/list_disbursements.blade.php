@@ -194,10 +194,10 @@ echo"<center>";
 if ($result->num_rows > 0) {
 
 
-    echo "<table class='appl-list-table' id='table1'><tr><th>Sr.No</th><th>Name</th><th>Account Number</th><th>Sanction Amount</th><th>Cheque Number</th><th>Sanction Date</th></tr>";
+    echo "<table class='appl-list-table' id='table1'><tr><th>Sr.No</th><th>Name</th><th>Account Number</th><th>Sanction Amount</th><th>Cheque Number</th><th>Sanction Date</th><th>Voucher</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["sanction_id"]."</td><td>".$row["name"]."</td><td>".$row["acc_number"]."</td><td>".$row["sanction_amount"]."</td><td>".$row["cheque_number"]."</td><td>".$row["sanction_date"]."</td> </tr>";
+        echo "<tr><td>".$row["sanction_id"]."</td><td>".$row["name"]."</td><td>".$row["acc_number"]."</td><td>".$row["sanction_amount"]."</td><td>".$row["cheque_number"]."</td><td>".$row["sanction_date"]."</td><td><form action ='\voucher'><input type='submit' value='Print Voucher'></form></td></tr>";
     }
 
         echo "</table>";
